@@ -1,3 +1,5 @@
+  
+  自己在文件夹里创建txt文件，然后使用add来告诉git库添加了什么
   git add readme . txt
   把readme . txt添加到库
   git comit告诉Git, 把文件提交到仓库可以一次添加多个，然后一次性提交 git commit -m“修改了什么内容的解释”最好加上，方便理解上次提交了什么
@@ -10,4 +12,12 @@
   10  当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100           git reset --hard HEAD ^ ---会上个版本
   使用git reset --hard 加commitid前几位就可以回到指定commit_id的版本
 
-GitHub存在一个工作区和缓存区，
+---暂存区和工作区
+GitHub存在一个工作区和缓存区，使用add只是添加到了暂存区，所以可以多次add，之后统一使用commit来提交
+
+改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file  
+git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
+当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作
+
+删除
+rm 文件名   确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit
