@@ -35,5 +35,7 @@ rm 文件名   确实要从版本库中删除该文件，那就用命令git rm�
 
 删除分支：git branch -d <name>
 
+起别名 git config alias (name) "log --pretty=oneline" --> git oneline等于git log --pretty=oneline
+
 git教程中文
 https://github.com/geeeeeeeeek/git-recipes
